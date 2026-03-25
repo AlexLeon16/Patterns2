@@ -20,14 +20,15 @@ public class DataGenerator {
             .setPort(9999)
             .setAccept(ContentType.JSON)
             .setContentType(ContentType.JSON)
+            .log(io.restassured.filter.log.LogDetail.ALL)
             .build();
 
     public static String randomLogin() {
-        return faker.name().username();
+        return "user" + System.currentTimeMillis();
     }
 
     public static String randomPassword() {
-        return faker.internet().password();
+        return "pass" + System.currentTimeMillis();
     }
 
     public static RegistrationDto getRandomUser(String status) {
