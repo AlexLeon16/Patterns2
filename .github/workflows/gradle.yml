@@ -23,9 +23,7 @@ jobs:
 
       - name: Start SUT
         run: java -jar artifacts/app-ibank.jar -P:profile=test &
-      
-      - name: Wait for app to start
-        run: sleep 10
+    
 
       - name: Run tests
         run: ./gradlew test -Dselenide.headless=true
