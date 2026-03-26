@@ -1,19 +1,14 @@
 package ru.netology.data;
 
-import com.github.javafaker.Faker;
 import io.restassured.builder.RequestSpecBuilder;
-import io.restassured.specification.RequestSpecification;
 import io.restassured.http.ContentType;
-
-import java.util.Locale;
+import io.restassured.specification.RequestSpecification;
 
 import static io.restassured.RestAssured.given;
 
 public class DataGenerator {
     private DataGenerator() {
     }
-
-    private static final Faker faker = new Faker(new Locale("en"));
 
     private static final RequestSpecification requestSpec = new RequestSpecBuilder()
             .setBaseUri("http://localhost")
